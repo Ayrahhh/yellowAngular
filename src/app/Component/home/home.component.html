@@ -1,0 +1,136 @@
+<div id="wrapper">
+    <div id="content-wrapper" class="d-flex flex-column">
+        <div id="content">
+
+            
+<div class=" text-center">
+    
+    <h5 style="color: black;
+        font-style: unset;
+        font-weight:600;">YELLOW PAGE ZANZIBAR</h5> 
+
+        <!-- <mat-form-field style="width:30%;">
+        <mat-label>nn</mat-label>
+        <input type="text" matInput(input)="onFilter($event)">
+        </mat-form-field> -->
+          
+<form [formGroup]="filterForm">
+  <div class="container h-100">
+    <div class="d-flex justify-content-center h-100">
+      <div class="searchbar" >
+        <input class="search_input" type="text"  placeholder="Search here.." formControlName="comp"  (change)="[getsearch()] ">
+        <mat-autocomplete #auto="matAutocomplete" >
+          
+          <mat-option *ngFor="let data of compan"  >
+            
+          </mat-option>
+           <mat-option *ngFor="let data of compan" (click)="goToCompan(data.companyId)" >
+            
+          </mat-option>
+        </mat-autocomplete>
+         
+
+        <a href="#" class="search_icon"><i class="fas fa-search">Find</i></a>
+        
+        
+        </div>
+        </div>
+        </div>
+      </form> 
+<!--         
+      <button style="margin-left: 400px;" class="btn btn-success" type="submit" (click)="getsearch()" (click)="goToSearch(data.companyId)">click</button> -->
+      
+      <!-- new -->
+      <div class="row">
+        <div class="col-xl-3 col-md-6 mb-4" *ngFor="let s of search">
+            <div class="row no-gutters align-items-center">
+                    <div >
+                        <!-- <a routerLink="/compandetails" class="image">
+                        <img src="/assets/images/foods.png" width="300"></a> -->
+                    </div>
+                    <div class="h5 mb-0 font-weight-bold text-gray-800"> <button style="margin-left: 400px;" class="btn btn-success" type="submit" (click)="getsearch()" (click)="goToSearch(s.companyName)">click</button></div>
+                    <div class="col-auto">
+                    <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
+                </div>
+            </div>
+        </div>
+  <br>
+  
+
+<h2>What we have in companies</h2><br>
+<div class="row">
+
+<div class="col-xl-3 mb-2">
+    <div class="rt-container">
+      <div class="">
+          <div class="Scriptcontent">
+    <a routerLink="foods" class="image">
+        <img src="/assets/images/foods.png">
+        <span></span>
+    </a>
+        <p>FOODS & DRINKS</p>
+    </div>
+    </div>
+    </div>  
+</div>
+
+<div class="col-xl-3  mb-2">
+  <div class="rt-container">
+    <div class="">
+        <div class="Scriptcontent">
+  <a routerLink="construction" class="image">
+    <br><br>
+      <img src="/assets/images/Construction.jpg" height="1000px">
+      <span></span>
+  </a>
+      <p>CONSTRUCTION</p>
+  </div>
+  </div>
+  </div>  
+</div>
+
+<div class="col-xl-3  mb-2">
+  <div class="rt-container">
+    <div class="">
+        <div class="Scriptcontent">
+  <a routerLink="eletronics" class="image"><br>
+      <img src="/assets/images/electronic.jpg">
+      <span></span>
+  </a>
+      <p>ELECTRONICS</p>
+  </div>
+  </div>
+  </div>  
+</div>
+
+<div class="col-xl-3  mb-2">
+  <div class="rt-container">
+    <div class="">
+        <div class="Scriptcontent">
+  <a routerLink="marines" class="image">
+      <img src="/assets/images/marines.png">
+      <span></span>
+  </a>
+      <p>MARINES</p>
+  </div>
+  </div>
+  </div>  
+</div>
+
+
+</div>
+    
+   
+         <footer class="sticky-footer">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy @Spice Technology</span>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+  </div>  
+</div>
+  
+   

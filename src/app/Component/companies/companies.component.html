@@ -1,0 +1,156 @@
+<div class="col-xl-11 mx-auto">
+  <h1>Company List</h1>
+  <div>
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#CompanModal">
+      Add New Company
+    </button>
+
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr class="border:2px">
+        <th scope="col">CompanyName</th>
+        <th scope="col">Location</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Url</th>
+        <th scope="col">Ctegory</th>
+      </tr>
+    </thead>
+
+    <tr *ngFor="let c of compan">
+      <td>{{c.companyName}}</td>
+      <td>{{c.companyLocation}}</td>
+      <td>{{c.companyEmail}}</td>
+      <td>{{c.companyphonenumber}}</td>
+      <td>{{c.companurl}}</td>
+      <td>{{c.compancategory}}</td>
+
+
+
+      <td>
+        <button class="btn btn-success " type="button" data-bs-toggle="modal" data-bs-target="#updateModal"
+          (click)="editCompan(compan)">
+          Update</button> &nbsp;
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#deleteModal"
+          (click)="editCompan">Delete</button>
+      </td>
+    </tr>
+  </table>
+
+  <!-- add Modal -->
+  <div class="modal" id="CompanModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Company</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="companForm" (ngSubmit)="saveNewCompan()">
+            <div class="mb-3">
+
+              <label for="name" class="form-label">Company Name</label>
+              <input type="text" class="form-control" formControlName="companyName" />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Company Location</label>
+              <input type="text" class="form-control" formControlName="companyLocation" />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Company Email</label>
+              <input type="text" class="form-control" formControlName="companyEmail" />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Company phonenumber</label>
+              <input type="text" class="form-control" formControlName="companyPhonenumber" />
+            </div>
+
+            <div class="mb-3">
+              <label for="name" class="form-label">Url</label>
+              <input type="text" class="form-control" formControlName="url" />
+            </div>
+
+            <div class="mb-3">
+              <label for="name" class="form-label">category</label>
+              <input type="text" class="form-control" formControlName="category" />
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Save changes</button>
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- edit Modal -->
+  <div class="modal" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="updateForm" autocomplete="off">
+            <div class="mb-3">
+              <label for="name" class="form-label">Company Name</label>
+              <input type="text" class="form-control" formControlName="companyName" />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Company Location</label>
+              <input type="text" class="form-control" formControlName="companyLocation" />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label"> Company Email</label>
+              <input type="text" class="form-control" formControlName="companyEmail" />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Company phonenumber</label>
+              <input type="text" class="form-control" formControlName="companyPhonenumber" />
+            </div>
+
+            <div class="mb-3">
+              <label for="name" class="form-label">Url</label>
+              <input type="text" class="form-control" formControlName="url" />
+            </div>
+            <div class="mb-3">
+              <label for="name" class="form-label">Category</label>
+              <input type="text" class="form-control" formControlName="category" />
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Update</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- delete modal -->
+  <div class="modal" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">delete Company</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <h3>Delete Company</h3>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
